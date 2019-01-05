@@ -1,0 +1,14 @@
+#include <iostream>
+#include <stdio.h>
+#include <string>
+#include <math.h>
+#include "include/Matrix.h"
+using namespace std ;
+
+int main () {
+  matrix m1 ( matrix::matrix_read("./samples/my_data_1.dat") ) ;
+  matrix m2 ( matrix::matrix_read("./samples/my_data_2.dat") ) ;
+  matrix m3 ( m1 * m2 ) ;
+  cout << m3;
+}
+
