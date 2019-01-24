@@ -8,24 +8,19 @@ public class Server {
 	private static Map<String , String> client_info; // HashMap to store a pair of (client id, password)
 	private static int port_num;
 
-	// get method for file name 
 	public static String getFileName() {
 		return file_name;
 	}
-	// get method for client set 
 	public static HashSet<String> getClient_set() {
 		return client_set;	
 	} 
- 	// get method for client information 
 	public static Map<String,String> getClient_info() {
 		return client_info;
 	} 
-	// get method for port number 
 	public static int getPortNumber() {
 		return port_num;
 	}
 
-	/* main function */ 
 	public static void main(String[] args) {
 		// format check 
 		if (args.length != 1) {
@@ -204,9 +199,6 @@ class ClientThread extends Thread{
 		  }
               } // End of while(first_line != null)  
 
-
-
-
 		/*** After login */
 		while ((line = br.readLine())!= null) {
 			line_segment = line.split(",");
@@ -311,9 +303,7 @@ class ClientThread extends Thread{
 			  sock.close();
 		 } catch(Exception ex) {}
 	  }  
-
 	}
-      
          public void broadcast(String id, String msg){
                     synchronized(hm) {
 			   HashMap<String, PrintWriter> temp = new HashMap<String, PrintWriter>(hm);
@@ -326,8 +316,5 @@ class ClientThread extends Thread{
                                  pw.flush();
                            }  
                     }  
-	
          } // End of broadcast 
-	
-      
 }
